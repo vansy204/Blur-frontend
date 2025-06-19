@@ -34,7 +34,7 @@ const RegisterCard = () => {
     };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await axios.post('http://localhost:8888/api/identity/users/registration', formData);
+    const res = await axios.post('https://blur-backend.onrender.com/api/identity/users/registration', formData);
     if(res.data?.code !== 1000){
         showToast("Registration Error", res.data?.message, "error");
     }
@@ -64,7 +64,7 @@ const RegisterCard = () => {
          <div className="d-none d-md-flex" style={{ flex: 1, padding: 0 }}>
            <Image
              className=""
-             src="../blur.jpg"
+              src={process.env.PUBLIC_URL + "/blur.jpg"}
              alt="blur"
              style={{
                objectFit: "cover",

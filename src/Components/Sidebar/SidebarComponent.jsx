@@ -109,12 +109,11 @@ export const SidebarComponent = ({ onPostCreate }) => {
         <div className="flex items-center justify-center">
           <img
             className="w-16 h-16 rounded-full cursor-pointer hover:opacity-80"
-            src="../logo.webp"
+                src={process.env.PUBLIC_URL + "/logo.webp"}
             alt="Logo"
             onClick={() => navigate("/")}
           />
         </div>
-
         <div className="mt-10 flex-1 overflow-y-auto">
           {menuItems.map((item) => (
             <div
