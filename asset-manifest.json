@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Blur-frontend/static/css/main.3b95bd85.css",
-    "main.js": "/Blur-frontend/static/js/main.4791ffb3.js",
+    "main.js": "/Blur-frontend/static/js/main.ac2dfdb4.js",
     "index.html": "/Blur-frontend/index.html",
     "main.3b95bd85.css.map": "/Blur-frontend/static/css/main.3b95bd85.css.map",
-    "main.4791ffb3.js.map": "/Blur-frontend/static/js/main.4791ffb3.js.map"
+    "main.ac2dfdb4.js.map": "/Blur-frontend/static/js/main.ac2dfdb4.js.map"
   },
   "entrypoints": [
     "static/css/main.3b95bd85.css",
-    "static/js/main.4791ffb3.js"
+    "static/js/main.ac2dfdb4.js"
   ]
 }
