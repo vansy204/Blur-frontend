@@ -5,7 +5,9 @@ export const fetchUserPosts = async (token) => {
     const response = await axios.get(
       "https://6849-27-75-229-35.ngrok-free.app/api/post/my-posts",
       {
+        method: "GET",
         headers: {
+          
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
@@ -25,6 +27,7 @@ export const fetchUserPosts = async (token) => {
 export const fetchAllPost = async (token) => {
   try {
     const response = await axios.get("https://6849-27-75-229-35.ngrok-free.app/api/post/all", {
+      method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

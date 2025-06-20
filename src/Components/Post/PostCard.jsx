@@ -193,7 +193,9 @@ const PostCard = ({ post, user, onPostDeleted }) => { // Add onPostDeleted prop 
       const res = await axios.put(
         `https://6849-27-75-229-35.ngrok-free.app/api/post/${post.id}/unlike`,
         {},
+        
         {
+          method: "PUT",
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",

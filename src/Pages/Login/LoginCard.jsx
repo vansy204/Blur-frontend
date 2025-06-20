@@ -40,8 +40,10 @@ const LoginCard = () => {
       password: password,
     };
     try { 
-      const response = await axios.post("https://6849-27-75-229-35.ngrok-free.app/api/identity/auth/token", user);
-
+      const response = await axios.post("https://6849-27-75-229-35.ngrok-free.app/api/identity/auth/token", user,{
+        method: "POST",
+      });
+      
       if( response.data.code !== 1000){
         throw new Error("Invalid username or password");
       }
