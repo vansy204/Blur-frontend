@@ -35,7 +35,7 @@ const CreatePassword = () => {
   const checkPassword = () => password === confirmPassword;
 
   const getUserDetails = async (accessToken) => {
-    const response = await fetch("http://localhost:8888/api/identity/users/", {
+    const response = await fetch("https://686d-27-75-229-35.ngrok-free.app/api/identity/users/", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${accessToken}`,
