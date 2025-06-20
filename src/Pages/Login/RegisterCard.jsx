@@ -34,7 +34,7 @@ const RegisterCard = () => {
     };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await axios.post('https://686d-27-75-229-35.ngrok-free.app/api/identity/users/registration', formData);
+    const res = await axios.post('https://6849-27-75-229-35.ngrok-free.app/api/identity/users/registration', formData);
     if(res.data?.code !== 1000){
         showToast("Registration Error", res.data?.message, "error");
     }
