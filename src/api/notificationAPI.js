@@ -3,13 +3,14 @@ import axios from "axios";
 const BASE_URL = "http://localhost:8888";
 const NOTIFICATION_API = `${BASE_URL}/api/notification`;
 const config = (token) => ({
+
   headers: {
     Authorization: `Bearer ${token}`,
     "Content-Type": "application/json",
   },
 });
 export const getAllNotifications = async (token,userId) => {
-    try{
+    try{    
         const res = await axios.get(`${NOTIFICATION_API}/${userId}`, config(token))
         return res.data.result || [];
     }  catch (error) {

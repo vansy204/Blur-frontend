@@ -49,6 +49,7 @@ const PostCard = ({ post, user, onPostDeleted }) => { // Add onPostDeleted prop 
           axios.get(
             `https://6849-27-75-229-35.ngrok-free.app/api/post/comment/${post.id}/comments`,
             {
+              method: "GET",
               headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",

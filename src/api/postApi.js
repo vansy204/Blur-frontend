@@ -46,7 +46,9 @@ export const fetchAllPost = async (token) => {
 export const fetchLikePost = async (token,postId) =>{
   try {
     const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/${postId}/likes`, {
+      method: "GET",
       headers: {
+
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
@@ -64,6 +66,7 @@ export const fetchLikePost = async (token,postId) =>{
 export const deletePost = async (token, postId) => {
   try {
     const response = await axios.delete(`https://6849-27-75-229-35.ngrok-free.app/api/post/${postId}/delete`, {
+      method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -84,6 +87,7 @@ export const deletePost = async (token, postId) => {
 
 export const getPostsByUserId = async (userId, token) => {
   const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/users/posts/${userId}`, {
+    method: "GET",
     headers: { Authorization: `Bearer ${token}` },
   });
   return response.data?.result || [];
@@ -91,6 +95,7 @@ export const getPostsByUserId = async (userId, token) => {
 export const fetchAllComments = async (token, postId) => {
   try {
     const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/comment/${postId}/comments`,{
+      method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

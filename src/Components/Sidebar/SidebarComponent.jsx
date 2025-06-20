@@ -91,7 +91,10 @@ export const SidebarComponent = ({ onPostCreate }) => {
       const token = getToken();
       const response = await axios.post(
         "https://6849-27-75-229-35.ngrok-free.app/api/identity/auth/logout",
-        { token }
+        { token },{
+          method: "POST",
+        
+        }
       );
       if (response.data.code !== 1000) throw new Error("Invalid token");
       removeToken(token);

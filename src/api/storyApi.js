@@ -8,6 +8,7 @@ const STORY_API = `${BASE_URL}/api/stories`;
 const getAuthHeaders = (token = getToken()) => {
   return {
     headers: {
+      
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
@@ -17,7 +18,14 @@ const getAuthHeaders = (token = getToken()) => {
 // Lấy tất cả stories từ tất cả người dùng
 export const fetchAllStories = async (token = getToken()) => {
   try {
-    const res = await axios.get(`${STORY_API}/all`, getAuthHeaders(token));
+    const res = await axios.get(`${STORY_API}/all`,{
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+    } }
+      
+    );
     const data = res.data.result || [];
     
     return data.map(story => ({
@@ -35,7 +43,11 @@ export const fetchAllStories = async (token = getToken()) => {
 // Lấy stories của người dùng hiện tại
 export const fetchMyStories = async () => {
   try {
-    const res = await axios.get(`${STORY_API}/my-stories`, getAuthHeaders());
+    const res = await axios.get(`${STORY_API}/my-stories`,{
+      method: "GET",
+      headers: getAuthHeaders().headers
+
+    });
     return res.data.result || [];
   } catch (error) {
     console.error("Error fetching my stories:", error);
@@ -46,7 +58,10 @@ export const fetchMyStories = async () => {
 // Lấy stories theo userId
 export const fetchStoriesByUserId = async (userId) => {
   try {
-    const res = await axios.get(`${STORY_API}/user/${userId}`, getAuthHeaders());
+    const res = await axios.get(`${STORY_API}/user/${userId}`, {
+      method: "GET",
+      headers: getAuthHeaders().headers
+    });
     return res.data.result || [];
   } catch (error) {
     console.error(`Error fetching stories for user ${userId}:`, error);
@@ -57,7 +72,10 @@ export const fetchStoriesByUserId = async (userId) => {
 // Lấy story chi tiết theo ID
 export const fetchStoryById = async (storyId) => {
   try {
-    const res = await axios.get(`${STORY_API}/${storyId}`, getAuthHeaders());
+    const res = await axios.get(`${STORY_API}/${storyId}`, {
+      method: "GET",
+      headers: getAuthHeaders().headers
+    });
     return res.data.result;
   } catch (error) {
     console.error(`Error fetching story ${storyId}:`, error);
@@ -71,7 +89,10 @@ export const createStory = async (storyData) => {
     const res = await axios.post(
       `${STORY_API}/create`,
       storyData,
-      getAuthHeaders()
+      {
+        method: "POST",
+        headers: getAuthHeaders().headers
+      }
     );
     return res.data;
   } catch (error) {
@@ -86,7 +107,10 @@ export const updateStory = async (storyId, storyData) => {
     const res = await axios.put(
       `${STORY_API}/${storyId}`,
       storyData, 
-      getAuthHeaders()
+     {
+        method: "PUT",
+        headers: getAuthHeaders().headers
+     }
     );
     return res.data.result;
   } catch (error) {
@@ -98,7 +122,10 @@ export const updateStory = async (storyId, storyData) => {
 // Xóa story
 export const deleteStory = async (storyId) => {
   try {
-    const res = await axios.delete(`${STORY_API}/${storyId}`, getAuthHeaders());
+    const res = await axios.delete(`${STORY_API}/${storyId}`, {
+      method: "DELETE",
+      headers: getAuthHeaders().headers
+    });
     return res.data.result;
   } catch (error) {
     console.error(`Error deleting story ${storyId}:`, error);

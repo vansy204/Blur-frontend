@@ -83,6 +83,7 @@ const EditAccountPage = () => {
         `https://6849-27-75-229-35.ngrok-free.app/api/profile/users/${userInfo.id}`,
         formData,
         {
+          method: "PUT",
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",

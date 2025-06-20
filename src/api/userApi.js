@@ -12,7 +12,13 @@ const config = (token) => ({
 // Lấy thông tin profile của chính mình
 export const fetchUserInfo = async (token) => {
   try {
-    const response = await axios.get(`${BASE_URL}/users/myInfo`, config(token));
+    const response = await axios.get(`${BASE_URL}/users/myInfo`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     if (response.data?.code !== 1000) {
       throw new Error(response.data?.message);
     }
@@ -26,7 +32,13 @@ export const fetchUserInfo = async (token) => {
 // Lấy thông tin user theo userId (dành cho nội bộ)
 export const fetchUserByUserId = async (userId, token) => {
   try {
-    const response = await axios.get(`${BASE_URL}/internal/users/${userId}`, config(token));
+    const response = await axios.get(`${BASE_URL}/internal/users/${userId}`,{
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     if (response.data?.code !== 1000) {
       throw new Error(response.data?.message);
     }
@@ -40,7 +52,13 @@ export const fetchUserByUserId = async (userId, token) => {
 // Lấy tất cả user profiles
 export const fetchAllUserProfiles = async (token) => {
   try {
-    const response = await axios.get(`${BASE_URL}/users/`, config(token));
+    const response = await axios.get(`${BASE_URL}/users/`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     if (response.data?.code !== 1000) {
       throw new Error(response.data?.message);
     }
@@ -54,7 +72,13 @@ export const fetchAllUserProfiles = async (token) => {
 // Cập nhật profile người dùng
 export const updateUserProfile = async (userProfileId, data, token) => {
   try {
-    const response = await axios.put(`${BASE_URL}/users/${userProfileId}`, data, config(token));
+    const response = await axios.put(`${BASE_URL}/users/${userProfileId}`, data,{
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     if (response.data?.code !== 1000) {
       throw new Error(response.data?.message);
     }
@@ -68,7 +92,13 @@ export const updateUserProfile = async (userProfileId, data, token) => {
 // Xoá profile người dùng
 export const deleteUserProfile = async (userProfileId, token) => {
   try {
-    const response = await axios.delete(`${BASE_URL}/users/${userProfileId}`, config(token));
+    const response = await axios.delete(`${BASE_URL}/users/${userProfileId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     if (response.data?.code !== 1000) {
       throw new Error(response.data?.message);
     }
@@ -83,6 +113,7 @@ export const deleteUserProfile = async (userProfileId, token) => {
 export const followUser = async (userId, token) => {
   try {
     const response = await axios.put(`${BASE_URL}/users/follow/${userId}`, {}, {
+      method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -99,6 +130,7 @@ export const followUser = async (userId, token) => {
 export const unfollowUser = async (userId, token) => {
   try {
     const response = await axios.put(`${BASE_URL}/users/unfollow/${userId}`, {},{
+      method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -114,7 +146,13 @@ export const unfollowUser = async (userId, token) => {
 // Tìm kiếm user theo tên
 export const searchUsersByFirstName = async (firstName, token) => {
   try {
-    const response = await axios.get(`${BASE_URL}/users/search/${firstName}`, config(token));
+    const response = await axios.get(`${BASE_URL}/users/search/${firstName}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     return response.data?.result;
   } catch (error) {
     console.log("Error: ", error);
@@ -126,6 +164,7 @@ export const fetchUserProfileById = async (profileId, token) => {
   try {
     const response = await axios.get(`${BASE_URL}/users/${profileId}`,
       {
+        method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -144,7 +183,13 @@ export const fetchUserProfileById = async (profileId, token) => {
 
 export const getFollowers = async (profileId, token) => {
   try {
-    const response = await axios.get(`${BASE_URL}/users/follower/${profileId}`, config(token));
+    const response = await axios.get(`${BASE_URL}/users/follower/${profileId}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     return response.data?.result;
   } catch (error) {
     console.error("Error fetching followers:", error);
@@ -154,7 +199,13 @@ export const getFollowers = async (profileId, token) => {
 
 export const getFollowings = async (profileId, token) => {
   try {
-    const response = await axios.get(`${BASE_URL}/users/following/${profileId}`, config(token));
+    const response = await axios.get(`${BASE_URL}/users/following/${profileId}`,{
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     return response.data?.result;
   } catch (error) {
     console.error("Error fetching followings:", error);
