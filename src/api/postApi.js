@@ -3,7 +3,7 @@ import axios from "axios";
 export const fetchUserPosts = async (token) => {
   try {
     const response = await axios.get(
-      "https://686d-27-75-229-35.ngrok-free.app/api/post/my-posts",
+      "https://6849-27-75-229-35.ngrok-free.app/api/post/my-posts",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -24,7 +24,7 @@ export const fetchUserPosts = async (token) => {
 };
 export const fetchAllPost = async (token) => {
   try {
-    const response = await axios.get("https://686d-27-75-229-35.ngrok-free.app/api/post/all", {
+    const response = await axios.get("https://6849-27-75-229-35.ngrok-free.app/api/post/all", {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -42,7 +42,7 @@ export const fetchAllPost = async (token) => {
 };
 export const fetchLikePost = async (token,postId) =>{
   try {
-    const response = await axios.get(`https://686d-27-75-229-35.ngrok-free.app/api/post/${postId}/likes`, {
+    const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/${postId}/likes`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export const fetchLikePost = async (token,postId) =>{
 
 export const deletePost = async (token, postId) => {
   try {
-    const response = await axios.delete(`https://686d-27-75-229-35.ngrok-free.app/api/post/${postId}/delete`, {
+    const response = await axios.delete(`https://6849-27-75-229-35.ngrok-free.app/api/post/${postId}/delete`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export const deletePost = async (token, postId) => {
 
 
 export const getPostsByUserId = async (userId, token) => {
-  const response = await axios.get(`https://686d-27-75-229-35.ngrok-free.app/api/post/users/posts/${userId}`, {
+  const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/users/posts/${userId}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   return response.data?.result || [];
