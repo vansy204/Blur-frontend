@@ -87,7 +87,7 @@ export const getPostsByUserId = async (userId, token) => {
 };
 export const fetchAllComments = async (token, postId) => {
   try {
-    const response = await axios.get(`https://686d-27-75-229-35.ngrok-free.app/api/post/comment/${postId}/comments`,{
+    const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/comment/${postId}/comments`,{
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

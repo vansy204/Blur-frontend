@@ -80,7 +80,7 @@ const EditAccountPage = () => {
     try {
       const userInfo = await fetchUserInfo(token);
       const response = await axios.put(
-        `https://686d-27-75-229-35.ngrok-free.app/api/profile/users/${userInfo.id}`,
+        `https://6849-27-75-229-35.ngrok-free.app/api/profile/users/${userInfo.id}`,
         formData,
         {
           headers: {

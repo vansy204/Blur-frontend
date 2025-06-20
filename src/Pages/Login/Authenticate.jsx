@@ -25,7 +25,7 @@ export default function Authenticate() {
     if (isMatch) {
       const authCode = isMatch[1];
       fetch(
-        `https://686d-27-75-229-35.ngrok-free.app/api/identity/auth/outbound/authentication?code=${authCode}`,
+        `https://6849-27-75-229-35.ngrok-free.app/api/identity/auth/outbound/authentication?code=${authCode}`,
         {
           method: "POST",
         }

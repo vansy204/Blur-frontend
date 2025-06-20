@@ -17,7 +17,7 @@ const SearchPage = () => {
     setLoading(true); // Bật loading trước khi gọi API
     try {
       const response = await axios.get(
-        `https://686d-27-75-229-35.ngrok-free.app/api/profile/users/search/${search}`,
+        `https://6849-27-75-229-35.ngrok-free.app/api/profile/users/search/${search}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
