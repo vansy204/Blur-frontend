@@ -68,7 +68,7 @@ export const SidebarComponent = ({ onPostCreate }) => {
       if (!userData) return;
       try {
         const response = await axios.get(
-          "http://localhost:8888/api/profile/users/myInfo",
+          "https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/profile/users/myInfo",
           {
             headers: {
               Authorization: `Bearer ${token}`,
