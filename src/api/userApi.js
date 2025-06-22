@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://6849-27-75-229-35.ngrok-free.app/api/profile";
+const BASE_URL = "https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/profile";
 
 const config = (token) => ({
   headers: {

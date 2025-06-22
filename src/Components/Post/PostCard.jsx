@@ -47,7 +47,7 @@ const PostCard = ({ post, user, onPostDeleted }) => { // Add onPostDeleted prop 
       try {
         const [commentRes, likeRes] = await Promise.all([
           axios.get(
-            `https://6849-27-75-229-35.ngrok-free.app/api/post/comment/${post.id}/comments`,
+            `https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/comment/${post.id}/comments`,
             {
               method: "GET",
               headers: {
@@ -116,7 +116,7 @@ const PostCard = ({ post, user, onPostDeleted }) => { // Add onPostDeleted prop 
   const handleCreateComment = async (comment) => {
     try {
       const res = await axios.post(
-        `https://6849-27-75-229-35.ngrok-free.app/api/post/comment/${post.id}/create`,
+        `https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/comment/${post.id}/create`,
         {
           content: comment,
         },
@@ -159,7 +159,7 @@ const PostCard = ({ post, user, onPostDeleted }) => { // Add onPostDeleted prop 
   const handlePostLike = async () => {
     try {
       const res = await axios.put(
-        `https://6849-27-75-229-35.ngrok-free.app/api/post/${post.id}/like`,
+        `https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/${post.id}/like`,
         {},
         {
           headers: {
@@ -192,7 +192,7 @@ const PostCard = ({ post, user, onPostDeleted }) => { // Add onPostDeleted prop 
   const handlePostUnLike = async () => {
     try {
       const res = await axios.put(
-        `https://6849-27-75-229-35.ngrok-free.app/api/post/${post.id}/unlike`,
+        `https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/${post.id}/unlike`,
         {},
         
         {

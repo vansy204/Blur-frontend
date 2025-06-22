@@ -87,7 +87,7 @@ const CreatePostModal = ({ isOpen, onClose, onPostCreate = () => {} }) => {
 
       const newPost = { content, mediaUrls };
       const response = await axios.post(
-        "https://6849-27-75-229-35.ngrok-free.app/api/post/create",
+        "https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/create",
         newPost,
         {
           method: "POST",

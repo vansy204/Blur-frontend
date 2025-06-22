@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL  = "http://localhost:8888/identity/users";
+const BASE_URL  = "https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/identity/users";
 
 const config = (token) => ({
   method: "POST",

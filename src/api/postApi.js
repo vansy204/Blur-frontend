@@ -3,7 +3,7 @@ import axios from "axios";
 export const fetchUserPosts = async (token) => {
   try {
     const response = await axios.get(
-      "https://6849-27-75-229-35.ngrok-free.app/api/post/my-posts",
+      "https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/my-posts",
       {
         method: "GET",
         headers: {
@@ -26,7 +26,7 @@ export const fetchUserPosts = async (token) => {
 };
 export const fetchAllPost = async (token) => {
   try {
-    const response = await axios.get("https://6849-27-75-229-35.ngrok-free.app/api/post/all", {
+    const response = await axios.get("https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/all", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ export const fetchAllPost = async (token) => {
 };
 export const fetchLikePost = async (token,postId) =>{
   try {
-    const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/${postId}/likes`, {
+    const response = await axios.get(`https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/${postId}/likes`, {
       method: "GET",
       headers: {
 
@@ -65,7 +65,7 @@ export const fetchLikePost = async (token,postId) =>{
 
 export const deletePost = async (token, postId) => {
   try {
-    const response = await axios.delete(`https://6849-27-75-229-35.ngrok-free.app/api/post/${postId}/delete`, {
+    const response = await axios.delete(`https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/${postId}/delete`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -86,7 +86,7 @@ export const deletePost = async (token, postId) => {
 
 
 export const getPostsByUserId = async (userId, token) => {
-  const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/users/posts/${userId}`, {
+  const response = await axios.get(`https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/users/posts/${userId}`, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -94,7 +94,7 @@ export const getPostsByUserId = async (userId, token) => {
 };
 export const fetchAllComments = async (token, postId) => {
   try {
-    const response = await axios.get(`https://6849-27-75-229-35.ngrok-free.app/api/post/comment/${postId}/comments`,{
+    const response = await axios.get(`https://35fe-2405-4802-9170-80f0-2457-8c6d-10fe-855d.ngrok-free.app/api/post/comment/${postId}/comments`,{
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
