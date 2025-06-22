@@ -33,7 +33,7 @@
     "web-vitals": "^4.2.4",
     "yup": "^1.6.1"
   },
-  "homepage": "https://vansy204.github.io/Blur-frontend",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
